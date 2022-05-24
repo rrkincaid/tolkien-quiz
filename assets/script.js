@@ -1,5 +1,5 @@
 var quizQuestions = [
-    { 
+    {
         title: "What is the name of the Ent that travels with Merry and Pip?",
         choices: ["Treebeard", "Treefriend", "EntKing"],
         answer: "Treebeard",
@@ -18,7 +18,7 @@ var quizQuestions = [
         title: "What are all the dwarves names who hired Bilbo as a burglar?",
         choices: ["Thorin, Balin, Dwalin, Bifur, Bofur, Bombur, Oin, Gloin, Dori, Nori, Ori, Fili, and Kili", "Thalin, Bylin, Dave, Billy, Bobby, Bonnie, Ian, Gary, Nemo, Nori, Owen, Phil, and Kenneth", "Theo, Brandy, Dwight, Brian, Brody, Brady, Oren, Clive, Olive, Nancy, Ophelia, Fernando, and Kim"],
         answer: "Thorin, Balin, Dwalin, Bifur, Bofur, Bombur, Oin, Gloin, Dori, Nori, Ori, Fili, and Kili",
-    }]
+    }];
     
 var startBtn = document.querySelector (".start-btn")
 var questions = document.querySelector("#questions")
@@ -32,17 +32,27 @@ var question3 = document.querySelector(".btn-3")
 
 var optionBtn = document.querySelector(".choice")
 
-startBtn.addEventListener('click', startGame)
+var highScores = document.querySelector("#scores")
+
+var timer = 40;
+var choiceBtn = document.querySelector(".btn")
+var startTimerEl = document.querySelector(".game-timer")
+
+
+function endGame() {
+    highScores.style.display = "block"
+    questions.style.display = "none" 
+}
 
 function startGame() {
     startBtn.style.display = "none"
     questions.style.display = "block"
-
+    highScores.style.display = "none"
+    
     renderQuestion()
     startTimer()
 }
 
-optionBtn.addEventListener('click', checkAnswer)
 
 function checkAnswer (event) {
     if (event.target.nodeName === "A") {
@@ -58,38 +68,57 @@ function checkAnswer (event) {
         } else {
             console.log("incorrect")
             currentQuestion++
+            timer = timer - 5;
+        }
+        if (currentQuestion === quizQuestions.length) {
+            return endGame()
         }
         renderQuestion()
     }
 }
 
 function renderQuestion() {
-
+    
     questionText.innerText = quizQuestions[currentQuestion].title 
     question1.innerText = quizQuestions[currentQuestion].choices[0]
     question2.innerText = quizQuestions[currentQuestion].choices[1]
     question3.innerText = quizQuestions[currentQuestion].choices[2]
-    // question4.innerText = quizQuestions[currentQuestion].choices[3]
-}
+    
+};
+
+
+//if quizQuestions.currentQuestions > 4, end quiz
+//once end quiz - store data and calculate score
+//prompt user initials - store in local storage and display to "high scores"
+//if no high scores -- list "no user score entered yet - your "
 
 
 // function startTimer() {
-var timer = 20;
-
-var startTimer = document.querySelector(".game-timer")
-
-function startTimer(event) {
-    console.log(event)
-    var gameTimer = setInterval(() => {
-        timer--
-        startTimer.text("Time Remaining: " + timer)
-        if (timer === 0) {
- clearInterval(gameTimer)
-            endGame()
-        }
-
-    }, 1000);
+    
+    function startTimer () {
+        console.log(timer)
+        var gameTimer = setInterval(() => {
+            timer--
+            // timer.textContent = ("Time Remaining: " + timer)
+            startTimerEl.innerText = "Time Remaining: " + timer
+            if (timer === 0) {
+                clearInterval(gameTimer)
+                endGame() 
+            }
+        }, 1000);
 }
+    
+    startBtn.addEventListener('click', startGame)
+    optionBtn.addEventListener('click', checkAnswer)
+    // optionBtn.addEventListener();
+
+//setitem
+// localStorage.setItem("highScores", jSON.stringify([{score: text, initials: text}]))
+//getitem (if you want high scores displayed)
+
+//need to store an array of objects
+//each will have two keys - score and initials 
+//so...will have to stringify before setting item into local storage. second argument (JSON.stringify())
 //     // GAME LOGIC VARIABLES (TIMER, INDEX #)
 
 //     //time interval and stop - set these separately
