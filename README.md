@@ -1,8 +1,8 @@
 # tolkien-quiz 🐛
 
-Quiz Challenge
+# Module 4 // Quiz Challenge
 
-# USER STORY //
+USER STORY //
 
 - User wants to test their knowledge of Middle Earth.
 

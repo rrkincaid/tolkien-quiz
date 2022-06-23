@@ -20,23 +20,25 @@ var quizQuestions = [
         answer: "Thorin, Balin, Dwalin, Bifur, Bofur, Bombur, Oin, Gloin, Dori, Nori, Ori, Fili, and Kili",
     }];
     
-var startBtn = document.querySelector (".start-btn")
-var questions = document.querySelector("#questions")
-var currentQuestion = 0
+var startBtn = document.querySelector(".start-btn");
+var questions = document.querySelector("#questions");
+var currentQuestion = 0;
 
-var questionText = document.querySelector ("#question-text")
-var question1 = document.querySelector (".btn-1")
-var question2 = document.querySelector (".btn-2")
-var question3 = document.querySelector(".btn-3")
-// var question4 = document.querySelector(".btn-4")
+var questionText = document.querySelector("#question-text");
+var question1 = document.querySelector(".btn-1");
+var question2 = document.querySelector(".btn-2");
+var question3 = document.querySelector(".btn-3");
 
-var optionBtn = document.querySelector(".choice")
 
-var highScores = document.querySelector("#scores")
+var optionBtn = document.querySelector(".choice");
+
+var highScores = document.querySelector("#scores");
 
 var timer = 40;
-var choiceBtn = document.querySelector(".btn")
-var startTimerEl = document.querySelector(".game-timer")
+var choiceBtn = document.querySelector(".btn");
+var startTimerEl = document.querySelector(".game-timer");
+
+var userScores = document.querySelector(".user-scores");
 
 
 function endGame() {
@@ -90,16 +92,13 @@ function renderQuestion() {
 //if quizQuestions.currentQuestions > 4, end quiz
 //once end quiz - store data and calculate score
 //prompt user initials - store in local storage and display to "high scores"
-//if no high scores -- list "no user score entered yet - your "
+//if no high scores stored yet -- list "no user score entered yet.. "
 
-
-// function startTimer() {
     
     function startTimer () {
         console.log(timer)
         var gameTimer = setInterval(() => {
             timer--
-            // timer.textContent = ("Time Remaining: " + timer)
             startTimerEl.innerText = "Time Remaining: " + timer
             if (timer === 0) {
                 clearInterval(gameTimer)
@@ -113,7 +112,7 @@ function renderQuestion() {
     // optionBtn.addEventListener();
 
 //setitem
-// localStorage.setItem("highScores", jSON.stringify([{score: text, initials: text}]))
+//localStorage.setItem("highScores", jSON.stringify([{score: text, initials: text}]))
 //getitem (if you want high scores displayed)
 
 //need to store an array of objects
@@ -122,24 +121,6 @@ function renderQuestion() {
 //     // GAME LOGIC VARIABLES (TIMER, INDEX #)
 
 //     //time interval and stop - set these separately
-// var timerCurrent = 20;
-// var currentIndex = 0;
-
-// var timerEl = document.querySelector();
-
-    
-//     function startTimer() {
-//         timer = setInterval(function () {
-//             timerCurrent--
-//             timerEl.textContent = timer;
-    
-//             if (timer === 0) {
-//                 clearInterval(timer);
-//                 alert("Time's Up!")
-//                 return
-//             }
-//         })
-// };
 
 
 //     // SET 'TIMER' AND 'SCORE' VALUES FOR TOP OF GAME
@@ -163,59 +144,6 @@ function renderQuestion() {
     //local storage - set up separately
     
     
-    // TODO: VARIABLES!
-
-    
-    // CAPTURE ALL HTML NECESSARY HTML ELEMENTS
-    
-    // $( function() {
-    //     $( "input" ).checkboxradio();
-    // } );
-
-
-// TODO: INITIALIZE PAGE (HIDING/SHOWING BUTTONS, ETC)
-
-
-
-
-
-// TODO: BUTTON CLICK EVENT LISTENERS (START BTN, GAME BTN)
-
-// START BTN:
-// RUN 'STARTGAME' FUNCTIONALITY
-
-
-// GAME BTN:
-
-
-
-
-// LOOP THROUGH KITTEN ARRAY ON CLICK
-// RENDERKITTEN ON CLICK
-// COUNT CLICKS
-
-// TODO: GAME FUNCTIONALITY
-// STARTGAME:
-
-
-
-    // HIDE 'START' BUTTON
-
-
-        // SHOW 'GAME' BUTTON
-
-
-    // SET 'TIMER' AND 'SCORE' VALUES FOR TOP OF GAME
-    // RUN 'ENDGAME' WHEN TIMER IS UP
-
-
-    // ENDGAME:
-
-
-// HIDE 'GAME' BUTTON
-//gameBtn.hide()
-// SHOW 'START' BUTTON'
-//startBtn.show()
     // ALERT CURRENT SCORE
 
     // CAPTURE USER INITIALS

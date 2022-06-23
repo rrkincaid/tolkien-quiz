@@ -6,7 +6,8 @@
     
 }; */
 
-.jumbotron-fluid {
+.jumbotron {
+    /* background: url("https://st3.depositphotos.com/1001146/31936/i/600/depositphotos_319367832-stock-photo-home-and-hobbit-garden-in.jpg"); */
     /* background-image: url ("https:source//images.unsplash.com/photo-1651269011240-31e8d4cba41a?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687"); */
     background-color: rgb(40, 141, 107);
     /* (./images/phil-botha-luI-LqQdav8-unsplash.jpg); */
@@ -14,6 +15,7 @@
 
 body {
     background: url("https://source.unsplash.com/1600x900/?landscape");
+    /* background: url("https://st3.depositphotos.com/1001146/31936/i/600/depositphotos_319367832-stock-photo-home-and-hobbit-garden-in.jpg"); */
 }
 
 .high-score {
